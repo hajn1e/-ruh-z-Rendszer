@@ -86,6 +86,7 @@
 						break;
 					case 4:
 						Console.Clear();
+
 						break;
 					case 5:
 						Console.Clear();
@@ -284,11 +285,11 @@
 				
 				static void KosarStatisztika()
 			{
-				int ossszes = 0;
+				int osszes = 0;
 				for (int i = 0; i < kosar.Count; i++)
 				{
-					ossszes += kosarMennyiseg[i];
-					Console.Write($kosárban összesen{osszes} termék van");
+					osszes += kosarMennyiseg[i];
+					Console.WriteLine($"kosárban összesen: {osszes} termék van");
 					Console.WriteLine($"{kosar[i]}: {kosarMennyiseg[i]} db");
 				}
 			}
