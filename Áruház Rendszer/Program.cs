@@ -137,6 +137,7 @@
 			}
 				termekek[index] = termek;
 				termekMennyiseg[index] = 0;
+				termekAr[index] = 0;
 
 				Console.WriteLine("Add meg a frissítendő mennyiséget: ");
 				int mennyiseg = Convert.ToInt32(Console.ReadLine());
@@ -150,10 +151,22 @@
 				else
 				{
 					termekMennyiseg[index] += mennyiseg;
-					Console.WriteLine("A raktár sikeresen frissítve!");
+					
 				}
 
-		}
+            Console.WriteLine("Add meg a frissítendő árat: ");
+			int ar=Convert.ToInt32(Console.ReadLine());
+
+			if (ar < 0) {
+                Console.WriteLine("Az ár nem lehet negatív szám");
+			}
+			else
+			{
+				termekAr[index] += ar;
+				Console.WriteLine("A raktár sikeresen frissítve!");
+			}
+
+        }
 
 		static void termekHozzaadas()
 			{
@@ -268,6 +281,17 @@
 					return legolcsobb;
 
 				}
+				
+				static void KosarStatisztika()
+			{
+				int ossszes = 0;
+				for (int i = 0; i < kosar.Count; i++)
+				{
+					ossszes += kosarMennyiseg[i];
+					Console.Write($kosárban összesen{osszes} termék van");
+					Console.WriteLine($"{kosar[i]}: {kosarMennyiseg[i]} db");
+				}
+			}
 
 
 			}
